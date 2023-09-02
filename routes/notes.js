@@ -45,3 +45,20 @@ const { json } = require('body-parser');
   });
 });
 
+// post route
+notes.post('/notes',(req, res) => {
+  const{title, text } = req.body;
+  if(req.body){
+    const newNote = {
+      title,
+      text,
+      id: uuidv4(),
+    };
+    readAndAppend(newNote, './db/db.json');
+    res.json('note added ');
+  } else {
+    res.error('error unable to add note')
+  }
+});
+
+module.exports = note;
