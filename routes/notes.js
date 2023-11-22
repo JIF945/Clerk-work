@@ -13,11 +13,23 @@ const { json } = require('body-parser');
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
  });
 
+ const getNotes = () =>{
+  console.log('getting front end')
+  fetch('/api/notes', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+ }
+
 //  get route for specific note
   notes.get('/notes',(req, res) => {
+    console.log('get notes')
     const id = req.params.id;
      readFromFile('./db/db.json')
-     .then((data) => json.parse(data))
+     .then((data) => json.parse(data)) 
+      console.log('data',data)
      .then((json) => {
         const result = json.filter((note) => note.id === id);
         return result.length > 0
