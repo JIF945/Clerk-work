@@ -9,7 +9,7 @@ const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils
 const { json } = require('body-parser');
 
 // API route to GET Route for retreiving all the notes
- notes.get('/notes', (req, res) => {
+ notes.get('/routes/notes.js', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
  });
 
