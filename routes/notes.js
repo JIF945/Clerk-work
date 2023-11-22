@@ -1,11 +1,11 @@
 // importing express
-const notes =('express').router();
+const notes = require('express').Router();
 
 // function that generates UUIDs
 const { v4: uuidv4} = require('uuid');
 
 // functions for reading and writing to the Json file
-const { readFromFile, writeToFile, readAndAppend } = require('..fsUtils/helpers/fsUtils');
+const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
 const { json } = require('body-parser');
 
 // API route to GET Route for retreiving all the notes
@@ -54,6 +54,8 @@ notes.post('/notes',(req, res) => {
       text,
       id: uuidv4(),
     };
+
+
     readAndAppend(newNote, './db/db.json');
     res.json('note added ');
   } else {
@@ -61,4 +63,4 @@ notes.post('/notes',(req, res) => {
   }
 });
 
-module.exports = note;
+module.exports = notes;
