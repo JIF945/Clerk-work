@@ -13,15 +13,7 @@ const { json } = require('body-parser');
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
  });
 
- const getNotes = () =>{
-  console.log('getting front end')
-  fetch('/api/notes', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
- }
+ 
 
 //  get route for specific note
   notes.get('/notes',(req, res) => {
