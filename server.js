@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 // Send all the request that begin with /api  to the notes in the routes folder
-app.use('/api, api');
+app.use('/api', api);
 
 // this view route is a GET route for the notes page
 app.get('/notes', (req, res) => 
@@ -26,7 +26,7 @@ res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 // this view route is a GET route for the index homepage
-app.get('/notes', (req, res) => 
+app.get('*', (req, res) => 
 res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
