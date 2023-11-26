@@ -9,14 +9,14 @@ const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils
 const { json } = require('body-parser');
 
 // API route to GET Route for retreiving all the notes
- notes.get('/routes/notes.js', (req, res) => {
+ notes.get('/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
  });
 
  
 
 //  get route for specific note
-  notes.get('/notes',(req, res) => {
+  notes.get('/notes/:id',(req, res) => {
     console.log('get notes')
     const id = req.params.id;
      readFromFile('./db/db.json')
@@ -34,7 +34,7 @@ const { json } = require('body-parser');
   notes.delete('/notes/:id', (req, res) => {
     const id = req.params.id;
      readFromFile('./db/db.json')
-     .then((data) => json.parse(data))
+     .then((data) => JSON.parse(data))
      .then((json) => {
 
         // new array
