@@ -19,8 +19,14 @@ Our assignment if we choose to accept, is to modify starter code to create an ap
 - Express
 
 ## Usage
-- Go to [website](https://epaper-e627f5e773d8.herokuapp.com/)
-- Click start button 
+- Go to [Application website](https://epaper-e627f5e773d8.herokuapp.com/)
+- Click get started button 
+- Screenshots of what user should see.
+
+![what you see](./Screenshot2.png )
+
+![what you will see](./Screenshot1.png)
+
 - Enter a title, click note text
 - Enter information, click save
 - Click trash icon to delete save note
